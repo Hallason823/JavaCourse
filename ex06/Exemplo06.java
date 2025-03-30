@@ -79,13 +79,28 @@ public class Exemplo06 {
         return -1;
     }
 
+    public static int pesquisaBinaria(double[] v, double x) {
+        int inicio = 0, fim = v.length-1, meio;
+        while (inicio <= fim) {
+            meio = (inicio + fim)/2;
+            if (x == v[meio]) {
+                return meio;
+            } else if (x < v[meio]) {
+                fim = meio-1;
+            } else {
+                inicio = meio+1;
+            }
+        }
+        return -1;
+    }
+
     public static void buscaNotasEnquantoNotaNaoNegativa (double[] v) {
         double nota; int pos;
         System.out.print("Digite uma nota a ser pesquisada: ");
         nota = input.nextDouble();
         pos = buscaMelhorada(v, nota);
         while (nota >= 0.0) {
-            pos = busca(v, nota);
+            pos = buscaMelhorada(v, nota);
             if (pos != -1) {
                 System.out.println("A nota " + nota + " foi encontrada na posição " + (pos+1) + "º");
             }
