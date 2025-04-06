@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class QUestion18 {
+public class Question18 {
     public static final int ARR_SIZE = 10;
 
     public static Scanner input = new Scanner(System.in);
