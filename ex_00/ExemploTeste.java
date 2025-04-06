@@ -1,7 +1,7 @@
 package ex_21_02;
 import java.util.Scanner;
 
-public class Exemplo03 {
+public class ExemploTeste {
 
     public static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
