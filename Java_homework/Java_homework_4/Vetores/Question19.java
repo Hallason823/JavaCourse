@@ -8,10 +8,9 @@ class Question19 {
 
     public static void fillArrayWithExpression(int[] arr, int product_factor) {
         for (int i = 0; i < arr.length; i++) {
-            
+            arr[i] = (i+product_factor*i)%(i+1);
         }
     }
-
 
     public static void printArray(String message, int[] arr) {
         System.out.print(message + "{");
@@ -22,10 +21,8 @@ class Question19 {
     }
 
     public static void main(String[] args) {
-
-
+        int[] arr = new int[ARR_SIZE];
+        fillArrayWithExpression(arr, PRODUCT_FACTOR);
+        printArray("\nOutput: ", arr);    
     }
-
-    
-
 }
