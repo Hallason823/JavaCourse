@@ -53,5 +53,4 @@ public class Exemplo08 {
         preencherAleatorio2(numeros);
         imprimir(numeros);
     } 
-
 }
