@@ -12,7 +12,7 @@ public class Exemplo09 {
             v[i] = i+1;
         }
         for (int i = 0; i < v.length; i++) {
-            pos = geradorAleat.nextInt(TAM) + 1;
+            pos = geradorAleat.nextInt(TAM);
             aux = v[i];
             v[i] = v[pos];
             v[pos] = aux;
@@ -21,7 +21,7 @@ public class Exemplo09 {
 
     public static void imprimir(double[] v) {
         for (int i = 0; i < v.length; i+=1) {
-            System.out.printf("%4d ", v[i]);
+            System.out.printf("%.2f ", v[i]);
             if ((i+1)%20 == 0) {
                 System.out.println();
             }
@@ -47,7 +47,7 @@ public class Exemplo09 {
         double aux;
         for (int i = 0; i < n-1; i++) {
             menor = i;
-            for (int j = 0; j < n; j++) {
+            for (int j = i+1; j < n; j++) {
                 if (v[menor] > v[j]) {
                     menor = j;
                 }
