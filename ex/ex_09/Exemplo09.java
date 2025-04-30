@@ -58,6 +58,21 @@ public class Exemplo09 {
         }
     }
 
+    public static void metodoBolha(double[] v, int n) {
+        int fim = n - 2, pos = 0;
+        boolean trocou = true;
+        double chave;
+        while (trocou) {
+          trocou = false;
+          for (int i = 0; i <= fim; i++) {
+            if (v[i] > v[i+1]) {
+              chave = v[i]; v[i] = v[i+1]; v[i+1] = chave;
+              pos = i; trocou = true;
+            }
+          }
+          fim = pos-1;
+        }
+      }
     public static void main(String[] args) {
         double[] v = new double[TAM];
         preencherAleatorio2(v);
