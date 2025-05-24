@@ -38,10 +38,10 @@ public class Exemplo13 {
     }
 
     public static int getIndexPersontaller(Person[] p, int size) {
-        if (size == 0) {
+        int idx_taller = 0;
+        if (size <= 0) {
             return -1;
         }
-        int idx_taller = 0;
         for (int i = 1; i < size; i++) {
             if(p[idx_taller].height < p[i].height) {
                 idx_taller = i;
@@ -51,22 +51,22 @@ public class Exemplo13 {
     }
 
     public static double getAverageAge(Person[] p, int size) {
-        if (size == 0) {
+        int sum_age = 0;
+        if (size <= 0) {
             return -1.0;
         }
-        int sum_age = p[0].age;
-        for (int i = 1; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             sum_age += p[i].age;
         }
         return (double)sum_age/(double)size;
     }
 
     public static double getStdAge(Person[] p, int size) {
+        double average_age = getAverageAge(p, size);
+        double std_age = 0;
         if (size <= 1) {
             return 0.0;
         }
-        double average_age = getAverageAge(p, size);
-        double std_age = 0;
         for (int i = 0; i < size; i++) {
             std_age += (p[i].age - average_age)*(p[i].age - average_age);
         }
@@ -75,6 +75,8 @@ public class Exemplo13 {
 
     public static void main(String[] args) {
        Person[] people = new Person[LENGTH];
+       int idx_taller;
+       double average_age, std_age;
        for (int i = 0; i < people.length; i++) {
         System.out.println("-----ENTERING "+(i+1)+"-----");
         people[i] = new Person();
@@ -83,11 +85,11 @@ public class Exemplo13 {
        for (int i = 0; i < people.length; i++) {
         printPerson(people[i]);
        }
-       int idx_taller = getIndexPersontaller(people, LENGTH);
+       idx_taller = getIndexPersontaller(people, LENGTH);
        System.out.println("The taller person has the idx " + idx_taller);
-       double average_age = getAverageAge(people, LENGTH);
+       average_age = getAverageAge(people, LENGTH);
        System.out.println("The average age is " + average_age);
-       double std_age = getStdAge(people, LENGTH);
+       std_age = getStdAge(people, LENGTH);
        System.out.println("The std age is " + std_age);
     }
 }
