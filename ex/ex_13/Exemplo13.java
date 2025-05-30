@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Exemplo13 {
 
-    public static final int LENGTH = 5;
+    public static final int LENGTH = 4;
 
     public static Scanner input = new Scanner(System.in);
 
@@ -37,7 +37,7 @@ public class Exemplo13 {
         return p.weight/(p.height*p.height);
     }
 
-    public static int getIndexPersontaller(Person[] p, int size) {
+    public static int getIndexPersonTaller(Person[] p, int size) {
         int idx_taller = 0;
         if (size <= 0) {
             return -1;
@@ -73,10 +73,67 @@ public class Exemplo13 {
         return Math.sqrt(std_age/(double)(size-1));
     }
 
+    public static void BubleSortByAge(Person[] v, int n) {
+        int fim = n - 2, pos = 0;
+        boolean trocou = true;
+        Person chave;
+        while (trocou) {
+        trocou = false;
+        for (int i = 0; i <= fim; i++) {
+            if (v[i].age > v[i+1].age) {
+            chave = v[i]; v[i] = v[i+1]; v[i+1] = chave;
+            pos = i; trocou = true;
+            }
+        }
+        fim = pos-1;
+        }
+    }
+
+    public static int searchByAge(Person[] v, int n, int x) {
+        for (int i = 0; i < n; i += 1) {
+          if (v[i].age == x) {
+            return i;
+          }
+        }
+        return -1;
+    }
+
+    public static void BubleSortByName(Person[] v, int n) {
+        int fim = n - 2, pos = 0;
+        boolean trocou = true;
+        Person chave;
+        while (trocou) {
+        trocou = false;
+        for (int i = 0; i <= fim; i++) {
+            if ((v[i].name.toUpperCase().compareTo(v[i+1].name.toUpperCase())) > 0) {
+            chave = v[i]; v[i] = v[i+1]; v[i+1] = chave;
+            pos = i; trocou = true;
+            }
+        }
+        fim = pos-1;
+        }
+    }
+
+    public static int binarySearchByName(Person[] v, String x) {
+        int inicio = 0, fim = v.length-1, meio;
+        while (inicio <= fim) {
+            meio = (inicio + fim)/2;
+            if (x.compareTo(v[meio].name) == 0) {
+                return meio;
+            } else if (x.compareTo(v[meio].name) < 0) {
+                fim = meio-1;
+            } else {
+                inicio = meio+1;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
        Person[] people = new Person[LENGTH];
-       int idx_taller;
+       int idx_taller, idx_name;
        double average_age, std_age;
+       String searched_name = "Hallason";
        for (int i = 0; i < people.length; i++) {
         System.out.println("-----ENTERING "+(i+1)+"-----");
         people[i] = new Person();
@@ -85,11 +142,33 @@ public class Exemplo13 {
        for (int i = 0; i < people.length; i++) {
         printPerson(people[i]);
        }
-       idx_taller = getIndexPersontaller(people, LENGTH);
+       idx_taller = getIndexPersonTaller(people, LENGTH);
        System.out.println("The taller person has the idx " + idx_taller);
        average_age = getAverageAge(people, LENGTH);
        System.out.println("The average age is " + average_age);
        std_age = getStdAge(people, LENGTH);
        System.out.println("The std age is " + std_age);
+       System.out.println("---BEFORE SORT BY AGE---");
+       for (int i = 0; i < LENGTH; i++) {
+        printPerson(people[i]);
+       }
+       BubleSortByAge(people, LENGTH);
+       System.out.println("---AFTER SORT BY AGE---");
+       for (int i = 0; i < LENGTH; i++) {
+        printPerson(people[i]);
+       }
+       BubleSortByName(people, LENGTH);
+       System.out.println("---AFTER SORT BY NAME---");
+       for (int i = 0; i < LENGTH; i++) {
+        printPerson(people[i]);
+       }
+       System.out.println("---SEARCH BY NAME---");
+       idx_name = binarySearchByName(people, searched_name);
+       if (idx_name != -1) {
+        System.out.println("The name is found in the idx " + idx_name);
+       }
+       else {
+        System.out.println("The name is not found!");
+       }
     }
 }

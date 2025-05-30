@@ -103,14 +103,7 @@ public class Exemplo10 {
         }
     }
 
-    public static int busca(int[] v, int n, int x) {
-        for (int i = 0; i < n; i += 1) {
-          if (v[i] == x) {
-            return i;
-          }
-        }
-        return -1;
-    }
+
 
     public static double calcularMedia(int[] v, int n) {
         int sum = 0;
