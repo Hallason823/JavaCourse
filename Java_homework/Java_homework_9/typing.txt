@@ -1,0 +1,87 @@
+y
+2
+y
+1
+Apartamento na Av. Caxanga
+Imovel
+Apartamento 2 Quartos com suites, 1 cozinha planejada, 1 sala e 1 vaga de garagem, na Avenida Caxanga, Recife-PE
+1
+1
+350000.00
+y
+1
+Loteamento Maria do Sol em Iguarassu
+Imovel
+Terreno de 10x20 em Iguarassu-PE, boa localizacao
+1
+25
+50000.00
+y
+1
+Toyota Etios Cross 2018
+Automovel
+Toyota Etios Cross 2018 | 1.5 15V Flex 4P Automatico | Cor: Prata
+1
+5
+64990.00
+y
+1
+Apartamento em Boa Viagem
+Imovel
+Apartamento 3 Quartos com suites, 1 cozinha planejada, 1 sala e 1 vaga de garagem, em Boa Viagem
+1
+1
+600000.00
+y
+1
+Apartamento em Boa Viagem
+Imovel
+Apartamento 1 Quarto com suite, 1 cozinha planejada, 1 sala e 1 vaga de garagem, em Boa Viagem
+1
+1
+400000.00
+y
+2
+y
+5
+5
+4
+y
+6
+3
+750000.00
+y
+1
+Chevrolet Onix 2021
+Automovel
+Chevrolet Onix 2021 | 1.0 Flex Manual | Cor: Prata, Preto e Branco
+1
+3
+63490.00
+y
+1
+Motorola Edge 5G
+Dispositivo movel
+Motorla Edge 5G Promocional
+1
+25
+2400.00
+y
+1
+Chevrolet Onix 2021
+Automovel
+Chevrolet Onix 2021 | 1.0 Flex Manual | Cor: Prata, Preto e Branco
+1
+3
+61490.00
+y
+3
+Imovel
+y
+7
+y
+8
+y
+10
+y
+4
