@@ -6,7 +6,7 @@ public class ManagerProducts {
 
     public static void readProduct(Product p) {
       System.out.print("Type the name: ");
-      p.title = input.nextLine();
+      p.name = input.nextLine();
       System.out.print("Type the description: ");
       p.description = input.nextLine();
       System.out.print("Type the unit price: ");
@@ -18,7 +18,7 @@ public class ManagerProducts {
 
     public static void printProduct(Product p) {
       System.out.printf("{TITLE: %s,\nDESCRIPTION: %s,\nUNIT PRICE: %.2f,\nQUANTITY IN STOCK: %d}\n",
-                        p.title, p.description, p.unitPrice, p.quantityInStock);
+                        p.name, p.description, p.unitPrice, p.quantityInStock);
     }
     public static void main(String[] args) {
       Product[] products = {new Product(), new Product()};

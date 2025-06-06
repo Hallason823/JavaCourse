@@ -1,5 +1,5 @@
 public class Product {
-  String title;
+  String name;
   String description;
   double unitPrice;
   int quantityInStock;  

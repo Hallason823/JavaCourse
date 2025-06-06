@@ -30,7 +30,7 @@ public class RandomArray {
     }
 
     public static String getFormatedValueFreq(int max_counter_digits) {
-        int count, max_arr_digits = getAmountOfDigits(ARR_MAX_VALUE);
+        int max_arr_digits = getAmountOfDigits(ARR_MAX_VALUE);
         String formated_value = " ".repeat((int) Math.ceil((double) (12-max_arr_digits)/2)) + "%" + max_arr_digits + "d" + " ".repeat((12-max_arr_digits)/2) + "|";
         String formated_freq = " ".repeat((int) Math.ceil((double) (12-max_counter_digits)/2)) + "%" + max_counter_digits + "d" + " ".repeat((12-max_counter_digits)/2)+"\n";
         return formated_value+formated_freq;
