@@ -75,7 +75,7 @@ public class Gerenciador {
             key = v[i];
             j = i;
             while(j > 0 && key.descricao.toUpperCase().compareTo(v[j-1].descricao.toUpperCase()) < 0) {
-                v[i] = v[i-1];
+                v[j] = v[j-1];
                 j--;
             }
             v[j] = key;
