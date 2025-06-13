@@ -28,10 +28,10 @@ public class Gerenciador {
                     System.out.println("\nCategoria ja cadastrada");
                 }
             } while(ja_cadastrou);
+            input.nextLine();
             v[qtd].codigo = id;
             System.out.println("\nInforme o nome da Categoria: ");
             v[qtd].nome = input.nextLine();
-            input.nextLine();
             return qtd+1;
         }
             System.out.println("\nA array de categorias esta cheio!");
