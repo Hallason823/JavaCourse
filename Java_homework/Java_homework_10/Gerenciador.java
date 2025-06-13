@@ -32,9 +32,10 @@ public class Gerenciador {
             System.out.println("\nInforme o nome da Categoria: ");
             v[qtd].nome = input.nextLine();
             input.nextLine();
+            return qtd+1;
         }
-        System.out.println("\nA array de categorias esta cheio!");
-        return qtd;
+            System.out.println("\nA array de categorias esta cheio!");
+            return qtd;
     }
 
     public static void imprimirUnicaCategoria(Categoria categoria) {
@@ -68,7 +69,7 @@ public class Gerenciador {
         }
     }
 
-    public static void selectionSortPorDescricao(Produto[] v, int qtd) {
+    public static void InsertionSortPorDescricao(Produto[] v, int qtd) {
         Produto key;
         int j;
         for (int i = 1; i < qtd; i++) {
@@ -81,7 +82,23 @@ public class Gerenciador {
             v[j] = key;
         }
     }
-    
+
+    public static void SelectionSortDescricao(Produto[] v, int qtd) {
+        int menor;
+        Produto aux;
+        for (int i = 0; i < qtd - 1; i += 1) {
+            menor = i;
+            for (int j = i + 1; j <= qtd - 1; j += 1) {
+                if (v[j].descricao.toUpperCase().compareTo(v[menor].descricao.toUpperCase()) < 0) {
+                menor = j;
+                }
+            }
+            aux = v[i];
+            v[i] = v[menor];
+            v[menor] = aux;
+        }  
+    }
+
     public static int buscaBinariaPorDescricao(Produto[] v, int qtd, String x) {
         int meio, inicio = 0, fim = qtd - 1;
         while (inicio <= fim) {
