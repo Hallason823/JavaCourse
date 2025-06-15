@@ -70,7 +70,19 @@ public class Main {
         return idx;
     }
 
-    
+    public static void insertionSortPorNome(Pessoa[] v, int qtd) {
+        Pessoa key;
+        int j;
+        for (int i = 1; i < qtd; i++) {
+            key = v[i];
+            j = i;
+            while (j>0 && key.nome.toUpperCase().compareTo(v[j-1].nome.toUpperCase()) < 0) {
+                v[j] = v[j-1];
+                j -= 1;
+            }
+            v[j] = key;
+        }
+    }
 
     public static void main(String[] args) {
 
