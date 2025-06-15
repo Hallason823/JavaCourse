@@ -84,6 +84,21 @@ public class Main {
         }
     }
 
+    //buscaBinariaPorNome --> recebe um vetor de Pessoas (input) com preenchimento qtd (input) ordenado pelo campo Nome em ordem alfabetica e retorna idx do nome (input) buscado caso o encontre em caso contrario retorna -1
+    public static int buscaBinariaPorNome(Pessoa[] v, int qtd, String nome) {
+        int meio, inicio = 0, fim = qtd-1;
+        while(inicio <= fim) {
+            meio = (inicio+fim)/2;
+            if (v[meio].nome.toUpperCase().compareTo(nome.toUpperCase()) == 0) {
+                return meio;
+            } else if (v[meio].nome.toUpperCase().compareTo(nome.toUpperCase()) < 0) {
+                inicio = meio+1;
+            } else {
+                fim = meio-1;
+            }
+        }
+        return -1;
+    }
     public static void main(String[] args) {
 
     }
