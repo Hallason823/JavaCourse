@@ -39,6 +39,19 @@ public class Main {
         return qtd;
     }
 
+    public static double calcularIMC(Pessoa p) {
+        return p.peso/(p.altura*p.altura);
+    }
+
+    public static void imprimirPessoas(Pessoa[] v, int qtd) {
+        if (qtd <= 0) {
+            System.out.println("O vetor de Pessoas está vazio!");
+        }
+        for (int i = 0; i < qtd; i++) {
+            System.out.printf("Pessoa %d: {%s, %d anos, %.2f kg, %.2f m, IMC = %.2f}", i+1, v[i].nome, v[i].idade, v[i].peso, v[i].altura, calcularIMC(v[i]));
+        }
+    }
+
     public static void main(String[] args) {
 
     }
