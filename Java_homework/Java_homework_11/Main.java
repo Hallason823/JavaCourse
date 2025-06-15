@@ -52,6 +52,26 @@ public class Main {
         }
     }
 
+    public static int maisVelhaIMCMagreza(Pessoa[] v, int qtd) {
+        boolean existe_imc_magreza = false;
+        int idx = 0;
+        for (int i = 0; i < qtd; i++) {
+            if (!existe_imc_magreza && calcularIMC(v[i]) < 18.5) {
+                existe_imc_magreza = true;
+                idx = i;
+            }
+            if (existe_imc_magreza && calcularIMC(v[i]) < 18.5 && v[idx].idade < v[i].idade) {
+                idx = i;
+            }
+        }
+        if (!existe_imc_magreza) {
+            return -1;
+        }
+        return idx;
+    }
+
+    
+
     public static void main(String[] args) {
 
     }
